@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CIFRA — Café de especialidad, medido con precisión</title>
+    <meta
+      name="description"
+      content="CIFRA es café de especialidad trazado por lote: origen documentado, curva de tueste registrada y extracción calibrada."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./Style/style.css" />
+  </head>
+  <body>
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <header class="nav">
+      <div class="nav-inner">
+        <a href="#top" class="logo">CIFRA<span class="logo-dot">°</span></a>
+        <nav class="nav-links" id="nav-links">
+          <a href="#lotes">Lotes</a>
+          <a href="#metodo">Método</a>
+          <a href="#suscribirse">Contacto</a>
+        </nav>
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-text">
+          <p class="eyebrow">CAFÉ DE ESPECIALIDAD · LOTE TRAZADO</p>
+          <h1>El café,<br />reducido a su<br />forma más precisa.</h1>
+          <p class="hero-sub">
+            Cada lote se mide, se traza y se tuesta bajo curva. Sin adjetivos
+            vagos — solo origen, datos de extracción y una taza que los
+            confirma.
+          </p>
+          <div class="hero-cta">
+            <a href="#lotes" class="btn btn-primary">Explorar lotes</a>
+            <a href="#metodo" class="btn btn-ghost">Ver método</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <svg
+            viewBox="0 0 460 320"
+            class="brew-curve"
+            role="img"
+            aria-label="Curva de temperatura durante el tueste"
+          >
+            <line x1="40" y1="270" x2="440" y2="270" class="axis"></line>
+            <line x1="40" y1="20" x2="40" y2="270" class="axis"></line>
+            <path
+              id="curve-path"
+              class="curve-path"
+              d="M40,250 C 90,240 120,180 150,150 C 190,110 230,70 270,55 C 320,38 370,32 430,28"
+            ></path>
+            <circle
+              id="curve-dot"
+              class="curve-dot"
+              r="4"
+              cx="40"
+              cy="250"
+            ></circle>
+            <text x="40" y="292" class="axis-label">0:00</text>
+            <text x="415" y="292" class="axis-label">12:00</text>
+            <text x="8" y="24" class="axis-label">°C</text>
+          </svg>
+          <div class="readout">
+            <div class="readout-item">
+              <span class="readout-label">TEMP</span
+              ><span class="readout-value" id="val-temp">96°C</span>
+            </div>
+            <div class="readout-item">
+              <span class="readout-label">RATIO</span
+              ><span class="readout-value">1:2.1</span>
+            </div>
+            <div class="readout-item">
+              <span class="readout-label">TDS</span
+              ><span class="readout-value">1.42%</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="manifesto reveal">
+        <p>
+          CIFRA nace de una pregunta simple: ¿por qué el café de especialidad se
+          vende con adjetivos y no con números? Diseñamos cada lote como un
+          experimento reproducible — origen documentado, curva de tueste
+          registrada, extracción calibrada. El resultado no es una historia. Es
+          una taza que se puede repetir.
+        </p>
+      </section>
+
+      <!-- LOTES -->
+      <section class="lotes" id="lotes">
+        <div class="section-head reveal">
+          <p class="eyebrow">LOTES ACTIVOS</p>
+          <h2>Tres orígenes,<br />tres curvas.</h2>
+        </div>
+
+        <div class="lote-grid">
+          <article class="lote-card reveal">
+            <div class="lote-top">
+              <span class="lote-code">LOTE-014</span>
+              <svg viewBox="0 0 100 40" class="mini-curve" aria-hidden="true">
+                <path d="M2,34 C 20,30 35,18 50,15 C 68,11 82,9 98,6"></path>
+              </svg>
+            </div>
+            <h3>Huila, Colombia</h3>
+            <p class="lote-meta">1.850 m.s.n.m. · Lavado</p>
+            <p class="lote-notes">Cítrico · Miel · Almendra</p>
+            <div class="lote-data">
+              <span>Tueste 214°C</span><span>Ratio 1:2.0</span
+              ><span>TDS 1.38%</span>
+            </div>
+            <a href="#suscribirse" class="btn btn-ghost btn-small"
+              >Ver detalle</a
+            >
+          </article>
+
+          <article class="lote-card reveal">
+            <div class="lote-top">
+              <span class="lote-code">LOTE-027</span>
+              <svg viewBox="0 0 100 40" class="mini-curve" aria-hidden="true">
+                <path d="M2,32 C 22,28 38,22 52,14 C 70,5 84,7 98,4"></path>
+              </svg>
+            </div>
+            <h3>Yirgacheffe, Etiopía</h3>
+            <p class="lote-meta">2.050 m.s.n.m. · Natural</p>
+            <p class="lote-notes">Frutos rojos · Jazmín · Té negro</p>
+            <div class="lote-data">
+              <span>Tueste 208°C</span><span>Ratio 1:2.3</span
+              ><span>TDS 1.46%</span>
+            </div>
+            <a href="#suscribirse" class="btn btn-ghost btn-small"
+              >Ver detalle</a
+            >
+          </article>
+
+          <article class="lote-card reveal">
+            <div class="lote-top">
+              <span class="lote-code">LOTE-033</span>
+              <svg viewBox="0 0 100 40" class="mini-curve" aria-hidden="true">
+                <path d="M2,35 C 18,33 34,25 48,20 C 66,13 80,15 98,8"></path>
+              </svg>
+            </div>
+            <h3>Marcala, Honduras</h3>
+            <p class="lote-meta">1.650 m.s.n.m. · Honey</p>
+            <p class="lote-notes">Caramelo · Nuez · Manzana</p>
+            <div class="lote-data">
+              <span>Tueste 218°C</span><span>Ratio 1:2.1</span
+              ><span>TDS 1.41%</span>
+            </div>
+            <a href="#suscribirse" class="btn btn-ghost btn-small"
+              >Ver detalle</a
+            >
+          </article>
+        </div>
+      </section>
+
+      <section class="metodo" id="metodo">
+        <div class="section-head reveal">
+          <p class="eyebrow">TRAZABILIDAD</p>
+          <h2>De la finca a la taza,<br />sin puntos ciegos.</h2>
+        </div>
+
+        <div class="pipeline">
+          <div class="pipeline-step reveal">
+            <span class="pipeline-glyph" aria-hidden="true"
+              ><svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9"></circle></svg
+            ></span>
+            <h4>Origen</h4>
+            <p>
+              Compra directa a productores identificados, con altitud, variedad
+              y método de proceso registrados por lote.
+            </p>
+          </div>
+          <div class="pipeline-arrow" aria-hidden="true">→</div>
+          <div class="pipeline-step reveal">
+            <span class="pipeline-glyph" aria-hidden="true"
+              ><svg viewBox="0 0 24 24">
+                <rect x="4" y="4" width="16" height="16"></rect></svg
+            ></span>
+            <h4>Tueste</h4>
+            <p>
+              Curva de temperatura y tiempo registrada minuto a minuto. Cada
+              perfil se ajusta al lote, no al revés.
+            </p>
+          </div>
+          <div class="pipeline-arrow" aria-hidden="true">→</div>
+          <div class="pipeline-step reveal">
+            <span class="pipeline-glyph" aria-hidden="true"
+              ><svg viewBox="0 0 24 24">
+                <path d="M12 3 L21 12 L12 21 L3 12 Z"></path></svg
+            ></span>
+            <h4>Registro</h4>
+            <p>
+              Cada bolsa lleva un código de lote público: podés consultar su
+              ficha técnica completa antes de comprar.
+            </p>
+          </div>
+          <div class="pipeline-arrow" aria-hidden="true">→</div>
+          <div class="pipeline-step reveal">
+            <span class="pipeline-glyph" aria-hidden="true"
+              ><svg viewBox="0 0 24 24">
+                <path d="M4 20 L12 4 L20 20 Z"></path></svg
+            ></span>
+            <h4>Extracción</h4>
+            <p>
+              Ratio y TDS recomendados por lote, calibrados en catación, para
+              que la taza en casa sea la misma que probamos.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-band reveal" id="suscribirse">
+        <h2>Recibí el próximo lote<br />antes que se agote.</h2>
+        <form class="subscribe-form" id="subscribe-form">
+          <input
+            type="email"
+            required
+            placeholder="tu@email.com"
+            aria-label="Correo electrónico"
+          />
+          <button type="submit" class="btn btn-primary">Suscribirme</button>
+        </form>
+        <p class="cta-fine" id="cta-fine">
+          Un lote nuevo cada 3 semanas. Sin spam, solo curvas nuevas.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <span class="logo">CIFRA<span class="logo-dot">°</span></span>
+        <nav class="footer-links">
+          <a href="#lotes">Lotes</a>
+          <a href="#metodo">Método</a>
+          <a href="#suscribirse">Contacto</a>
+        </nav>
+      </div>
+      <p class="footer-fine">© 2026 CIFRA Café. Cordoba, Argentina.</p>
+    </footer>
+
+    <script src="./JavaScript/script.js"></script>
+  </body>
+</html>
